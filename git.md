@@ -18,6 +18,16 @@ git --version
 	- git commit -m "初始化"
 5.查看历史版本
 	- git log
+	- git reflog
+	
+	
+91.往前回滚
+	- git reset --hard 版本号
+	- git reset --hard 64130e8f0cb76ce173098f9024e61c082559c676
+92.往后回滚
+	- git reset --hard 版本号
+	- git reset --hard 7af72c4
+	
 	
 红色：新增文件或者修改文件  =》 git add .
 绿色：git已经管理起来     =》 git commit -m "描述信息"
