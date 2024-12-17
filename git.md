@@ -27,7 +27,8 @@ git --version
 92.往后回滚
 	- git reset --hard 版本号
 	- git reset --hard 7af72c4
-	
+93.部分回滚：修改 =》 未修改
+	- git checkout -- git.md
 	
 红色：新增文件或者修改文件  =》 git add .
 绿色：git已经管理起来     =》 git commit -m "描述信息"
@@ -48,7 +49,7 @@ git三大区域：
 
 
 
-
+![image-20241217093250367](assets/image-20241217093250367.png)
 
 
 
