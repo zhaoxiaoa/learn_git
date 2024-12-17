@@ -94,3 +94,26 @@ git branch -d dev
 
 <img src="assets/image-20241217102427050.png" alt="image-20241217102427050" style="zoom:67%;" />
 
+
+
+推送代码到仓库：
+
+```python
+# 给远程仓库起别名【只执行遍】
+git remote add origin https://github.com/zhaoxiaoa/learn_git.git
+# 向远程提交推送代码
+git push -u origin master
+```
+
+从仓库拉代码：
+
+```python
+# 克隆远程仓库代码【内部已经实现了起别名】
+git clone https://github.com/zhaoxiaoa/learn_git.git
+# 进到本地仓库中再执行其他命令
+cd learn_git/
+git branch
+# 切换其他分支【默认看不到，但是可以切换】
+git checkout dev
+```
+
