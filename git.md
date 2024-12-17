@@ -96,16 +96,17 @@ git branch -d dev
 
 
 
-推送代码到仓库：
+在家里：推送代码到仓库：
 
 ```python
 # 给远程仓库起别名【只执行遍】
 git remote add origin https://github.com/zhaoxiaoa/learn_git.git
 # 向远程提交推送代码
 git push -u origin master
+git push -u origin dev
 ```
 
-从仓库拉代码：
+在公司：从仓库拉代码：
 
 ```python
 # 克隆远程仓库代码【内部已经实现了起别名】
@@ -117,24 +118,65 @@ git branch
 git checkout dev
 ```
 
-在公司：开始用dev分支
+在公司：开始开发
 
 ```python 
+# 切换到dev分支进行开发
 git checkout dev
-# 将主分支的代码合并到dev
+# 将主分支的代码合并到dev【只执行一次】
 git merge master
 
-
 # 开发代码
-# add
+# add .
 git push origin dev
 ```
 
 在家里：
 
 ```python 
+# 切换到dev分支
 git checkout dev
+# 拉代码
+git pull origin dev
 
-# 更新
+# 开发代码
+# add .
+git push origin dev
+```
+
+在公司：
+
+```python 
+# 切换到dev分支
+git checkout dev
+# 拉代码
+git pull origin dev
+
+# 开发代码
+# add .
+git push origin dev
+```
+
+....开发完毕要上线....
+
+```python
+# 开发代码
+# add .
+
+# 切换到master并合并dev
+git checkout master
+git merge dev
+git push origin master
+
+git checkout dev
+git merge master
+git push origin dev
+```
+
+换了场景后：
+
+```
+git pull origin master
 git pull origin dev
 ```
+
