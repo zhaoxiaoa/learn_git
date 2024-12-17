@@ -170,7 +170,7 @@ git push origin master
 
 # 切换到dev，合并master，推送到仓库
 git checkout dev
-git merge master  # master有变化
+git merge master  # 如果master有变化，可以合并
 git push origin dev
 ```
 
@@ -184,3 +184,8 @@ git checkout dev
 git pull origin dev
 ```
 
+
+
+
+
+开发完毕了...
