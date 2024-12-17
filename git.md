@@ -32,7 +32,9 @@ git config --global user.name "zhaoxiaoa"
 git config --global user.email "amanscorner@163.com"
 ```
 
+git三大区域：
 
+<img src="assets/image-20241217090903801.png" alt="image-20241217090903801" style="zoom:67%;" />
 
 
 
