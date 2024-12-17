@@ -163,20 +163,24 @@ git push origin dev
 # 开发代码
 # add .
 
-# 切换到master并合并dev
+# 切换到master，合并dev，推送到仓库
 git checkout master
 git merge dev
 git push origin master
 
+# 切换到dev，合并master，推送到仓库
 git checkout dev
-git merge master
+git merge master  # master有变化
 git push origin dev
 ```
 
 换了场景后：
 
 ```
+git checkout master
 git pull origin master
+
+git checkout dev
 git pull origin dev
 ```
 
