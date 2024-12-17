@@ -29,14 +29,6 @@ git --version
 93.部分回滚：修改 =》 未修改
 	- git checkout -- git.md
 	
-# 查看当前分支
-git branch
-# 创建分支
-git branch dev
-# 切换分支
-git checkout dev
-
-	
 红色：新增文件或者修改文件  =》 git add .
 绿色：git已经管理起来     =》 git commit -m "描述信息"
 生成版本
@@ -66,7 +58,39 @@ git三大区域：
 
 分支的使用场景：修复之前的BUG。
 
- <img src="assets/image-20241217094959579.png" alt="image-20241217094959579" style="zoom:67%;" />
+```python
+# 查看当前分支
+git branch
+# 创建分支
+git branch dev
+# 切换分支：开始开发
+git checkout dev
 
-开发新功能...
+# 修复BUG：
+# 1.切换回master
+git checkout master
+# 2.创建bug分支并修复bug
+git branch bug
+git checkout bug
+# add...
+# 3.切换回master合并BUG分支
+git checkout master
+git merge bug
+# 4.删除分支
+git branch -d bug
+
+# 继续开发：回dev分支
+git checkout dev  # 此时还没有修复BUG
+# add
+# 切换回master合并dev分支
+git checkout master
+git merge dev  # 可能产生冲突，会报错，此时需要手动修复
+git branch -d dev
+```
+
+ ![image-20241217101757897](assets/image-20241217101757897.png)
+
+工作流：
+
+<img src="assets/image-20241217102427050.png" alt="image-20241217102427050" style="zoom:67%;" />
 
