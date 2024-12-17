@@ -27,7 +27,7 @@ git --version
 补充：在commit前
 
 ```
-个人信息配置：
+个人信息配置：只需要执行一次
 git config --global user.name "zhaoxiaoa"
 git config --global user.email "amanscorner@163.com"
 ```
@@ -38,3 +38,8 @@ git三大区域：
 
 
 
+
+
+
+
+开发新功能...
