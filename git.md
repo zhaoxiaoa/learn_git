@@ -117,3 +117,24 @@ git branch
 git checkout dev
 ```
 
+在公司：开始用dev分支
+
+```python 
+git checkout dev
+# 将主分支的代码合并到dev
+git merge master
+
+
+# 开发代码
+# add
+git push origin dev
+```
+
+在家里：
+
+```python 
+git checkout dev
+
+# 更新
+git pull origin dev
+```
