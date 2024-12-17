@@ -19,6 +19,7 @@ git --version
 5.查看历史版本
 	- git log
 	- git reflog
+	- git log --graph --pretty=format:"%h %s"
 
 91.往前回滚
 	- git reset --hard 版本号
@@ -96,32 +97,28 @@ git branch -d dev
 
 
 
-在家里：推送代码到仓库：
+1.在家里：【推送】
 
 ```python
-# 给远程仓库起别名【只执行遍】
+# 给远程仓库起别名【只执行一遍】
 git remote add origin https://github.com/zhaoxiaoa/learn_git.git
-# 向远程提交推送代码
+
+# 推送代码：向远程仓库
 git push -u origin master
 git push -u origin dev
 ```
 
-在公司：从仓库拉代码：
+2.在公司：【下载】
 
 ```python
 # 克隆远程仓库代码【内部已经实现了起别名】
 git clone https://github.com/zhaoxiaoa/learn_git.git
+
 # 进到本地仓库中再执行其他命令
 cd learn_git/
 git branch
-# 切换其他分支【默认看不到，但是可以切换】
-git checkout dev
-```
 
-在公司：开始开发
-
-```python 
-# 切换到dev分支进行开发
+# 开始开发：切换到dev分支
 git checkout dev
 # 将主分支的代码合并到dev【只执行一次】
 git merge master
@@ -131,7 +128,7 @@ git merge master
 git push origin dev
 ```
 
-在家里：
+3.不管在家或在公司：【拉代码】
 
 ```python 
 # 切换到dev分支
@@ -144,23 +141,10 @@ git pull origin dev
 git push origin dev
 ```
 
-在公司：
-
-```python 
-# 切换到dev分支
-git checkout dev
-# 拉代码
-git pull origin dev
-
-# 开发代码
-# add .
-git push origin dev
-```
-
-....开发完毕要上线....
+9...开发完毕要上线...
 
 ```python
-# 开发代码
+# 开发完代码
 # add .
 
 # 切换到master，合并dev，推送到仓库
@@ -174,18 +158,31 @@ git merge master  # 如果master有变化，可以合并
 git push origin dev
 ```
 
-换了场景后：
+10.换到另一个场景
 
-```
+```python
 git checkout master
-git pull origin master
+git pull origin master  # 拉master
 
 git checkout dev
-git pull origin dev
+git pull origin dev  # 拉dev
 ```
 
+补充：
+
+```python
+git pull origin dev
+# 相当于
+git fetch origin dev
+git merge origin/dev
+```
+
+<img src="assets/image-20241217143906595.png" alt="image-20241217143906595"  />
 
 
 
+rebase（变基）:
 
-开发完毕了...
+使用git记录变得简洁。多个记录整合成一个记录。
+
+注意：只针对没有提交到远程仓库的记录做合并。
